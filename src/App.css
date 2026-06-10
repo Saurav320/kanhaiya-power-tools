@@ -1,0 +1,250 @@
+@import "tailwindcss";
+
+/* ===== GLOBAL ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: Inter, sans-serif;
+  background: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ===== CONTAINER FIX ===== */
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  overflow: hidden;
+}
+
+/* ===== HERO GRADIENT ===== */
+
+.gradient-hero {
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e40af 45%,
+    #dc2626 100%
+  );
+}
+
+/* ===== SECTION TITLE ===== */
+
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: #dc2626;
+  display: block;
+  margin: 14px auto 0;
+  border-radius: 999px;
+}
+
+/* ===== CARD HOVER ===== */
+
+.card-hover {
+  transition: all 0.35s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+}
+
+/* ===== FLOATING ===== */
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ===== FADE UP ===== */
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE MENU ===== */
+
+.animate-slide-down {
+  animation: slideDown 0.25s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== HERO GLOW ===== */
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  filter: blur(80px);
+  top: -150px;
+  left: -150px;
+}
+
+.hero-glow::after {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  filter: blur(80px);
+  bottom: -150px;
+  right: -150px;
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-primary {
+  background: #dc2626;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #b91c1c;
+}
+
+.btn-secondary {
+  background: #2563eb;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #1d4ed8;
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+
+@media (max-width: 1024px) {
+  .section-title::after {
+    width: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .gradient-hero {
+    text-align: center;
+  }
+
+  .hero-glow::before,
+  .hero-glow::after {
+    width: 250px;
+    height: 250px;
+  }
+
+  .card-hover:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-title::after {
+    width: 50px;
+    height: 3px;
+  }
+
+  .animate-float {
+    animation: none;
+  }
+
+  .hero-glow::before,
+  .hero-glow::after {
+    display: none;
+  }
+}
+
+/* ===== IMAGE CARDS ===== */
+
+.service-image {
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.08);
+}
+
+/* ===== SHADOWS ===== */
+
+.shadow-soft {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.shadow-soft:hover {
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
