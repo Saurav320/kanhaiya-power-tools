@@ -248,3 +248,120 @@ section {
 .shadow-soft:hover {
   box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
+
+/* ===================================
+   FLOATING BUTTONS
+=================================== */
+
+.floating-btn {
+  position: fixed;
+  right: 20px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+  z-index: 99999;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+
+  transition: all .3s ease;
+}
+
+.floating-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Call Button */
+
+.floating-call {
+  bottom: 110px;
+  background: linear-gradient(135deg,#2563eb,#1d4ed8);
+}
+
+/* WhatsApp Button */
+
+.floating-whatsapp {
+  bottom: 30px;
+  background: linear-gradient(135deg,#25d366,#128c7e);
+}
+
+/* Pulse Ring Animation */
+
+.pulse-ring {
+  animation: pulseRing 2s infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 0 rgba(37,99,235,.5),
+      0 10px 30px rgba(0,0,0,.25);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 0 20px rgba(37,99,235,0),
+      0 10px 30px rgba(0,0,0,.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 0 rgba(37,99,235,0),
+      0 10px 30px rgba(0,0,0,.25);
+  }
+}
+
+/* WhatsApp Green Ring */
+
+.floating-whatsapp.pulse-ring {
+  animation: whatsappPulse 2s infinite;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,.5),
+      0 10px 30px rgba(0,0,0,.25);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 0 20px rgba(37,211,102,0),
+      0 10px 30px rgba(0,0,0,.25);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 0 rgba(37,211,102,0),
+      0 10px 30px rgba(0,0,0,.25);
+  }
+}
+
+/* Mobile */
+
+@media (max-width:768px) {
+
+  .floating-btn {
+    width: 58px;
+    height: 58px;
+    right: 15px;
+  }
+
+  .floating-call {
+    bottom: 95px;
+  }
+
+  .floating-whatsapp {
+    bottom: 20px;
+  }
+}
